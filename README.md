@@ -49,6 +49,7 @@ To setup the development environment to run project run:
 
 ```bash
 pip install pipenv
+pipenv install  (Be sure you have installed python 3.10 version.)
 pipenv shell
 python manage.py migrate
 
