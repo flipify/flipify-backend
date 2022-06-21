@@ -1,4 +1,5 @@
 from django.urls import path
+from . import views
 from authentication.views import (
         GitHubLogin,
         GitLabLogin, 
@@ -14,6 +15,7 @@ from rest_framework_simplejwt.views import (
 
 
 urlpatterns = [
+    path('greet/', views.greet, name='greet'),
     path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('login-refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('auth/github/', GitHubLogin.as_view(), name='github_login'),
