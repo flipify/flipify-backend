@@ -3,7 +3,7 @@ from allauth.socialaccount.providers.gitlab.views import GitLabOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from dj_rest_auth.registration.views import SocialConnectView
 from dj_rest_auth.registration.views import SocialLoginView
-from django.config import settings
+from django.conf import settings
 
 
 class GitHubLogin(SocialLoginView):
