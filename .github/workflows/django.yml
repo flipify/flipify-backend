@@ -29,7 +29,7 @@ jobs:
       uses: SpicyPizza/create-envfile@v1.3
       with:
         envkey_DEBUG: 1
-        envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        envkey_SECRET_KEY: 'django-insecure-bcsivcsbsibisv'
         envkey_GITHUB_URL: ${{ secrets.GITHUB_URL }}
         envkey_GITLAB_URL: ${{ secrets.GITLAB_URL }}
         envkey_CALL_BACK_URL: ${{ secrets.CALL_BACK_URL }}
