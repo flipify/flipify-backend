@@ -13,4 +13,3 @@ def greet(request):
         return Response(status=405)
     name = request.query_params.get('name', 'World')
     return Response({'message': f'Hello, {name}!'})
-
