@@ -30,6 +30,9 @@ jobs:
       with:
         envkey_DEBUG: 1
         envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        envkey_GITHUB_URL: ${{ secrets.GITHUB_URL }}
+        envkey_GITLAB_URL: ${{ secrets.GITLAB_URL }}
+        envkey_CALL_BACK_URL: ${{ secrets.CALL_BACK_URL }}
     - name: Run Tests
       run: |
         python manage.py test
