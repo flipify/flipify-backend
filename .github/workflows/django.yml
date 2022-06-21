@@ -25,10 +25,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        envkey_DEBUG: 1
+        envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
     - name: Run Tests
       run: |
         python manage.py test
-      env:  
-        SECRET_KEY : "insecure-dgiafcbaiscbyisegvciosdbvisdgv"
-        DEBUG : True
