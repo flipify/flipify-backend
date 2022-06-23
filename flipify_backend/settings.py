@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # rest_framework
     'rest_framework',
     'rest_framework.authtoken',
@@ -37,15 +37,15 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.gitlab',
-    
+
     # drf third package
     'dj_rest_auth',
     'dj_rest_auth.registration',
-    
+
     # apps
-    'authentication',
-    'main',
-    
+    'apps.authentication',
+    'apps.main',
+
 ]
 
 MIDDLEWARE = [
@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CORE.urls'
+ROOT_URLCONF = 'flipify_backend.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CORE.wsgi.application'
+WSGI_APPLICATION = 'flipify_backend.wsgi.application'
 
 
 # Database
@@ -132,13 +132,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-
 SITE_ID = 1
 
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
-        'GITHUB_URL':config('GITHUB_URL'),
+        'GITHUB_URL': config('GITHUB_URL'),
         'SCOPE': [
             'user',
             'repo',
@@ -146,7 +144,7 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     },
     'gitlab': {
-        'GITLAB_URL':config('GITLAB_URL'),
+        'GITLAB_URL': config('GITLAB_URL'),
         'SCOPE': ['api'],
     },
 }
