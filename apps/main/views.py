@@ -1,5 +1,5 @@
 from rest_framework.decorators import api_view
-from rest_framework import permissions, generics
+from rest_framework import permissions, generics, status
 from rest_framework.reverse import reverse
 from rest_framework.response import Response
 from apps.main import models, serializers
@@ -31,10 +31,10 @@ def api_root(request):
 def greet(request):
     """
     Greets the user with a message.
-    The name is passed as a query parameter.
+    The `name` is passed as a query parameter.
     """
     if request.method != 'GET':
-        return Response(status=405)
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
     name = request.query_params.get('name', 'World')
     return Response({'message': f'Hello, {name}!'})
 
