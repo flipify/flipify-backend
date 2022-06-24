@@ -44,6 +44,10 @@ class PlatformView(generics.ListAPIView):
     Returns a list of platforms a flipify user
     can switch from or switch to and their current
     status.
+
+    Note: You'll have to manually create `Platform`
+    model instance form the django admin to have
+    this view not return an empty list.
     """
     queryset = models.Platform.objects.all()
     serializer_class = serializers.PlatformSerializer
@@ -54,6 +58,10 @@ class TechnologyView(generics.ListAPIView):
     """
     Returns a list of technologies or frameworks
     supported by flipify.
+
+    Note: You'll have to manually create `Technology`
+    model instance form the django admin to have
+    this view not return an empty list.
     """
     queryset = models.Technology.objects.all()
     serializer_class = serializers.TechnologySerializer
