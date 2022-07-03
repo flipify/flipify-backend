@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # drf third package
     'dj_rest_auth',
     'dj_rest_auth.registration',
+    'drf_yasg',
 
     # apps
     'apps.authentication',
