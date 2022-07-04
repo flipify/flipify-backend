@@ -163,3 +163,7 @@ JWT_AUTH_COOKIE = 'access-token'
 JWT_AUTH_REFRESH_COOKIE = 'refresh-token'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+GITHUB_CLIENT_ID = config('GITHUB_CLIENT_ID')
+GITHUB_CLIENT_SECRET = config('GITHUB_CLIENT_SECRET')
