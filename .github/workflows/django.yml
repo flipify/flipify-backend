@@ -34,7 +34,7 @@ jobs:
         envkey_GITLAB_URL: ${{ secrets.GITLAB_URL }}
         envkey_CALL_BACK_URL: ${{ secrets.CALL_BACK_URL }}
         envkey_GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
-        env_GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
+        envkey_GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
  
     - name: Run Tests
       run: |
