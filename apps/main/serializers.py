@@ -9,6 +9,8 @@ class PlatformSerializer(serializers.ModelSerializer):
             'name',
             'status',
             'logo',
+            'url',
+            'server_status'
         ]
 
 
