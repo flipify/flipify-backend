@@ -1,5 +1,7 @@
 from django.db import models
 from pygments.lexers import get_all_lexers
+import requests
+
 
 
 class Platform(models.Model):
@@ -19,14 +21,26 @@ class Platform(models.Model):
         ('netlify', 'Netlify'),
     )
 
-    # TODO: Define a better convention for status options.
-    STATUS_OPTIONS = (
-        ('active', 'Active'),
-        ('inactive', 'Inactive')
-    )
+
+
     name = models.CharField(max_length=100, choices=PLATFORM_OPTIONS)
-    status = models.CharField(max_length=40, choices=STATUS_OPTIONS)
+    # TODO in the  future a method should be witten to automatically get sever url
+    url  = models.URLField(max_length=100, )
     logo = models.ImageField()
+
+   # TODO: currently using python requests package to track server status
+   # if the future we can use another flexible package that can give us more detail
+    @property
+    def server_status(self):
+        url = self.url 
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                return 'online'
+        except requests.exceptions.ConnectionError as e:
+            return 'offline'
+
+
 
     def __str__(self) -> str:
         return self.name

@@ -7,8 +7,9 @@ class PlatformSerializer(serializers.ModelSerializer):
         model = models.Platform
         fields = [
             'name',
-            'status',
             'logo',
+            'url',
+            'server_status'
         ]
 
 
