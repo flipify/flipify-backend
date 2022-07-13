@@ -28,8 +28,10 @@ class Platform(models.Model):
     url  = models.URLField(max_length=100, )
     logo = models.ImageField()
 
-   # TODO: currently using python requests package to track server status
-   # if the future we can use another flexible package that can give us more detail
+   # TODO:
+   # currently using python requests package to track server status
+   # in the future we can use another flexible package that can give us more detail
+   # This should be realtime
     @property
     def server_status(self):
         url = self.url 
