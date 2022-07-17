@@ -25,7 +25,7 @@ def github_callback(request):
     """
     To get access to github repositories,
     we'll need the user in the frontend
-    to hit this URL 
+    to hit this URL
     https://github.com/login/oauth/authorize?scope=repo&client_id=[OUR_CLIENT_ID]
     which will redirect the user to gihub to authorize our app,
     on success, github will hit this endpoint
@@ -33,7 +33,7 @@ def github_callback(request):
     params that we'll use for authorization.
     we use the code in the query params and
     other payloads to obtain the access token
-    to access the github API. for now this 
+    to access the github API. for now this
     endpoint will only spit it out it needs
     to be stored. for future use.
 

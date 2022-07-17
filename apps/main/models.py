@@ -34,7 +34,7 @@ class Platform(models.Model):
    # This should be realtime
     @property
     def server_status(self):
-        url = self.url 
+        url = self.url
         try:
             response = requests.get(url)
             if response.status_code == 200:
