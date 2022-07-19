@@ -30,6 +30,8 @@ urllib3 = "==1.26.9"
 drf-yasg = "*"
 pillow = "*"
 pygments = "*"
+coverage = "*"
+model-bakery = "*"
 
 [dev-packages]
 autopep8 = "*"
