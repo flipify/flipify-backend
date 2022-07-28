@@ -30,6 +30,10 @@ urllib3 = "==1.26.9"
 drf-yasg = "*"
 pillow = "*"
 pygments = "*"
+django-cors-headers = "*"
+django-heroku = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 autopep8 = "*"
