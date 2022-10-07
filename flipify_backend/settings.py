@@ -1,5 +1,6 @@
 from pathlib import Path
 from decouple import config
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -64,7 +65,7 @@ ROOT_URLCONF = 'flipify_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "apps", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,6 +135,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 SITE_ID = 1
+
+AUTH_USER_MODEL = "authentication.Profile"
+LOGIN_REDIRECT_URL = "schema-swagger-ui"
+LOGIN_URL = "login"
 
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
