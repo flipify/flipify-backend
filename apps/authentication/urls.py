@@ -3,12 +3,12 @@ from apps.authentication.views import (
     GitHubLogin,
     GitLabLogin,
     GitHubConnect,
-    GitLabConnect
+    GitLabConnect,
 )
 
 urlpatterns = [
-    path('github/', GitHubLogin.as_view(), name='github_login'),
-    path('gitlab/', GitLabLogin.as_view(), name='gitlab_login'),
-    path('github/connect/', GitHubConnect.as_view(), name='github_connect'),
-    path('gitlab/connect/', GitLabConnect.as_view(), name='gitlab_connect')
+    path("github/", GitHubLogin.as_view(), name="github_login"),
+    path("gitlab/", GitLabLogin.as_view(), name="gitlab_login"),
+    path("github/connect/", GitHubConnect.as_view(), name="github_connect"),
+    path("gitlab/connect/", GitLabConnect.as_view(), name="gitlab_connect"),
 ]
