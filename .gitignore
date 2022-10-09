@@ -114,3 +114,5 @@ cython_debug/
 !.vscode/extensions.json 
 .history
 
+# Pycharm
+.idea
