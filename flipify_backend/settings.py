@@ -1,6 +1,6 @@
 from pathlib import Path
 from decouple import config
-import django_heroku
+import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,7 +139,6 @@ SITE_ID = 1
 
 SOCIALACCOUNT_PROVIDERS = {
     "github": {
-        "GITHUB_URL": config("GITHUB_URL"),
         "SCOPE": [
             "user",
             "repo",
@@ -147,12 +146,12 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     },
     "gitlab": {
-        "GITLAB_URL": config("GITLAB_URL"),
         "SCOPE": ["api"],
     },
 }
 
-CALL_BACK_URL = config("CALL_BACK_URL")
+GITHUB_CALLBACK_URL = config("GITHUB_CALLBACK_URL")
+GITLAB_CALLBACK_URL = config("GITLAB_CALLBACK_URL")
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -167,11 +166,10 @@ JWT_AUTH_REFRESH_COOKIE = "refresh-token"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
-# TODO: Discard These Settings.
-GITHUB_CLIENT_ID = config("GITHUB_CLIENT_ID")
-GITHUB_CLIENT_SECRET = config("GITHUB_CLIENT_SECRET")
-
-
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+API_VERSION = "v1"
+
+
 # Activate Django-Heroku
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
