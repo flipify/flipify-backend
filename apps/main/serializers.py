@@ -6,10 +6,9 @@ class PlatformSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Platform
         fields = [
-            'name',
-            'logo',
-            'url',
-            'server_status'
+            "name",
+            "status",
+            "logo",
         ]
 
 
@@ -17,8 +16,8 @@ class TechnologySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Technology
         fields = [
-            'name',
-            'type',
-            'language',
-            'logo',
+            "name",
+            "type",
+            "language",
+            "logo",
         ]
