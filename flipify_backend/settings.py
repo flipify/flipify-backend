@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -17,45 +18,6 @@ DEBUG = config("DEBUG", cast=bool)
 ALLOWED_HOSTS = ["*"]
 
 
-# APPLICATION LOG SETTINGS
-
-LOGGING = {
-    "version": 1,
-    "loggers": {"django": {"handlers": ["debug", "info","warning","error","critical"], "level": "DEBUG"}},
-    "handlers": {
-        "debug": {
-            "level": "DEBUG",
-            "class": "logging.FileHandler",
-            "filename": "./logs/debug.log",
-        },
-        "info": {
-            "level": "INFO",
-            "class": "logging.FileHandler",
-            "filename": "./logs/info.log",
-        },
-            "warning": {
-                "level": "WARNING",
-                "class": "logging.FileHandler",
-                "filename": "./logs/warning.log",
-            },
-            "error": {
-                "level": "ERROR",
-                "class": "logging.FileHandler",
-                "filename": "./logs/error.log",
-            },
-            "critical": {
-                "level": "CRITICAL",
-                "class": "logging.FileHandler",
-                "filename": "./logs/critical.log",
-            },
-    },
-    "formatters": {
-        "simple": {
-            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
-            "style": "{",
-        },
-    },
-}
 
 
 # Application definition
@@ -204,3 +166,28 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 GITHUB_CLIENT_ID = config("GITHUB_CLIENT_ID")
 GITHUB_CLIENT_SECRET = config("GITHUB_CLIENT_SECRET")
+
+#Logging Config
+
+LOGGING = {
+    'version': 1,
+
+    'disable_existing_loggers': False,
+
+    'handlers': {
+        'file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': "./apps/main/logs/warning.log",
+        },
+    },
+    r
+    'loggers': {
+
+        '': {
+            'handlers': ['file'], 
+            'level': 'WARNING',
+            'propagate': True,
+        },
+    },
+}
