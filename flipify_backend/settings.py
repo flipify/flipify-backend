@@ -151,8 +151,8 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 }
 
-GITHUB_CALLBACK_URL = config("GITHUB_CALLBACK_URL")
-GITLAB_CALLBACK_URL = config("GITLAB_CALLBACK_URL")
+GITHUB_CALLBACK_URL = config("CALLBACK_URL_GITHUB")
+GITLAB_CALLBACK_URL = config("CALLBACK_URL_GITLAB")
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -178,4 +178,3 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 # Activate Django-Heroku
 django_on_heroku.settings(locals())
-from allauth.account import app_settings
