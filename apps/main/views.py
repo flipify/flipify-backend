@@ -1,11 +1,19 @@
-from django.shortcuts import redirect
-from rest_framework.decorators import api_view
-from rest_framework import permissions, generics, status
-from django.conf import settings
+import datetime
+#import the logging library
+import logging
+
 import requests
-from rest_framework.reverse import reverse
+from django.conf import settings
+from django.shortcuts import redirect
+from rest_framework import generics, permissions, status
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.reverse import reverse
+
 from apps.main import models, serializers
+
+#Get on instance of logger
+logger = logging.getLogger('django')
 
 
 @api_view(['GET'])
@@ -15,6 +23,7 @@ def github_repo_access_path(request):
     our consumer with the url to have users
     grant us acces to their repositories
     """
+    logger.warning("todo -> write a perfect log message for the technolgy endpoint " + str(datetime.datetime.now())+ " hours\n" )
     return Response({
         "githubRepoAccessUrl": f"https://github.com/login/oauth/authorize?scope=repo&client_id={settings.GITHUB_CLIENT_ID}"
     })
@@ -81,6 +90,7 @@ def greet(request):
     if request.method != 'GET':
         return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
     name = request.query_params.get('name', 'World')
+    logger.warning("todo -> write a perfect log message for the greet endpoint " + str(datetime.datetime.now())+ " hours\n" )
     return Response({'message': f'Hello, {name}!'})
 
 
@@ -94,9 +104,11 @@ class PlatformView(generics.ListAPIView):
     model instance form the django admin to have
     this view not return an empty list.
     """
+
     queryset = models.Platform.objects.all()
     serializer_class = serializers.PlatformSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
 
 
 class TechnologyView(generics.ListAPIView):
@@ -108,6 +120,7 @@ class TechnologyView(generics.ListAPIView):
     model instance form the django admin to have
     this view not return an empty list.
     """
+
     queryset = models.Technology.objects.all()
     serializer_class = serializers.TechnologySerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
