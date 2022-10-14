@@ -181,11 +181,11 @@ LOGGING = {
             'filename': "./apps/main/logs/warning.log",
         },
     },
-    r
+    
     'loggers': {
 
         '': {
-            'handlers': ['file'], 
+            'handlers': ['file'],
             'level': 'WARNING',
             'propagate': True,
         },
