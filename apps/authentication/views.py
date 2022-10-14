@@ -5,7 +5,6 @@ from allauth.socialaccount.providers.gitlab.views import GitLabOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from dj_rest_auth.registration.views import SocialConnectView, SocialLoginView
 from django.conf import settings
-from rest_framework.decorators import api_view
 from rest_framework.permissions import AllowAny
 
 

@@ -16,8 +16,8 @@ drf-yasg = "*"
 gunicorn = "*"
 pillow = "*"
 pygments = "*"
-python-decouple = "*"
 whitenoise = "*"
+python-dotenv = "*"
 
 [dev-packages]
 black = "*"
