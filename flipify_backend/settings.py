@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
-import django_on_heroku
+
+# import django_on_heroku
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -180,4 +181,4 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
 
 # Activate Django-Heroku
-django_on_heroku.settings(locals())
+# django_on_heroku.settings(locals())
