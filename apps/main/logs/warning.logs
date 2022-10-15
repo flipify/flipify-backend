@@ -1,0 +1,4 @@
+WARNING 2022-10-15 13:22:31,408 views 26584 19068 todo -> write a perfect log message for the greet endpoint 2022-10-15 13:22:31.408509 hours
+
+WARNING 2022-10-15 13:31:32,100 log 30108 35224 Not Found: /
+WARNING 2022-10-15 13:31:32,100 basehttp 30108 35224 "GET / HTTP/1.1" 404 2175
