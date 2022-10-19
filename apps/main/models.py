@@ -45,7 +45,7 @@ class Technology(models.Model):
     LANGUAGE_OPTIONS = sorted([(item[1][0], item[0]) for item in LEXERS])
 
     name = models.CharField(max_length=100)
-    type = models.CharField(max_length=15, choices=TYPE_OPTIONS)
+    types = models.CharField(max_length=15, choices=TYPE_OPTIONS)
     language = models.CharField(max_length=50, choices=LANGUAGE_OPTIONS)
     logo = models.ImageField(blank=True, null=True)
 
