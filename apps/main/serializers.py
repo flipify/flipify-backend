@@ -17,7 +17,7 @@ class TechnologySerializer(serializers.ModelSerializer):
         model = models.Technology
         fields = [
             "name",
-            "type",
+            "types",
             "language",
             "logo",
         ]
