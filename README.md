@@ -49,7 +49,7 @@ To setup the development environment to run project run:
 
 ```bash
 pip install pipenv
-pipenv install  (Be sure you have installed python 3.10 version.)
+pipenv install 
 pipenv shell
 python manage.py migrate
 
@@ -70,3 +70,16 @@ git push origin feature-branch-name
 ```
 
 - Login to your github account and go to the your forked repository and make a pull request.
+
+> We named it <strong>Flipify</strong>
+
+# What Flipify does
+- [x] Switch from one hosting to a backup hosting just by flipping a switch
+
+* Select your current hosting provider
+* Select your site architecture
+* Select your hosting provider you wish to switch to
+* Make your switch.
+
+# Flipify
+<img src="flipify.jpg" height=500> 
