@@ -107,10 +107,9 @@ dmypy.json
 cython_debug/
 
 # Visual Studio Code # 
-.vscode/* 
-!.vscode/settings.json 
-!.vscode/tasks.json 
-!.vscode/launch.json 
-!.vscode/extensions.json 
 .history
 
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
